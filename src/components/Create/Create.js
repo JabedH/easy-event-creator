@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Create = () => {
   const navigate = useNavigate("");
@@ -13,39 +13,31 @@ const Create = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data, event) => {};
   return (
-    <div className="my-20">
+    <div className="p-20">
       <div className="flex flex-col md:flex-row justify-start my-10 items-center pb-3 md:pb-5 border-b-2 drop-shadow-xl">
         <button
           onClick={() => window.history.back()}
-          className="btn btn-outline btn-primary"
+          className=" w-[6rem] h-[2.5rem] text-[1rem] font-bold
+          text-white rounded-3xl bg-[#8456EC]"
         >
           Back
         </button>
         <h4 className="text-center w-full font-semibold text-2xl">
-          Add One-on-One Event Type
+          Create event
         </h4>
       </div>
-      <div className="border-2 rounded-md border-sky-800">
-        <div>
-          <div className="px-5 pt-5">
-            <h5 className="font-semibold">What event is this?</h5>
-            <p className="font-thin text-slate-400">
-              {eventLocation ? eventLocation : "No location given"}
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
+      <div className="border-2 rounded-md border-sky-800 flex justify-center">
         {/* react hook form */}
         <div className="pl-0 md:pl-10 my-10 md:my-10 m-1">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-control w-full max-w-md mt-3 md:mt-5">
+            <div class="form-control w-full  mt-3 md:mt-5">
               <label class="label">
                 <span class="label-text font-semibold">Event name</span>
               </label>
               <input
                 type="text"
                 placeholder=""
-                class="input input-bordered w-full max-w-md"
+                class="input input-bordered w-96 "
                 {...register("eventName", { required: true, maxLength: 40 })}
               />
             </div>
@@ -106,6 +98,17 @@ const Create = () => {
             </div>
             <div class="form-control w-full max-w-md mt-3 md:mt-5">
               <label class="label">
+                <span class="label-text font-semibold">Event photo</span>
+              </label>
+              <input
+                type="file"
+                placeholder=""
+                class="input input-bordered w-full max-w-md"
+                {...register("eventName", { required: true, maxLength: 40 })}
+              />
+            </div>
+            <div class="form-control w-full max-w-md mt-3 md:mt-5">
+              <label class="label">
                 <span class="label-text font-semibold">Description</span>
               </label>
               <textarea
@@ -116,25 +119,15 @@ const Create = () => {
                 {...register("description", { required: true, maxLength: 400 })}
               />
             </div>
-            {/* <div class="form-control w-full max-w-md mt-3 md:mt-5">
-              <label class="label">
-                <span class="label-text font-semibold">Event link</span>
-                <span class="label-text">easy-schedule.com/link</span>
-              </label>
+            <Link to="/event">
               <input
-                type="text"
-                placeholder=""
-                class="input input-bordered w-full max-w-md"
-                {...register("eventLink", { required: true, maxLength: 40 })}
+                className="bg-[#8456EC] text-white px-4 py-2 rounded-3xl mt-5 md:mt-5 ml-20 cursor-pointer "
+                type="submit"
+                value="Next"
               />
-            </div> */}
-            <input
-              className="bg-blue-500 text-white px-4 py-2 rounded-3xl mt-5 md:mt-5 ml-20 cursor-pointer"
-              type="submit"
-              value="Next"
-            />
+            </Link>
           </form>
-          <div className="mt-[-32px] ml-3">
+          <div className="mt-[-32px] mr-[5rem]">
             <button onClick={() => window.history.back()} className="">
               Cancel
             </button>
