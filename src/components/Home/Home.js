@@ -20,9 +20,15 @@ const Home = () => {
             Easily host and share events with your friends across any social
             media.
           </p>
-          <button className="mt-[5.2rem]  w-[32rem] h-[5.5rem] text-[2rem] font-bold text-white rounded-3xl bg-gradient-to-r from-[#8456EC] to-[#E87BF8]">
-            🎉 Create my event
-          </button>
+          <Link to="./create">
+            <button
+              className="mt-[5.2rem] w-[32rem] h-[5.5rem] text-[2rem] font-bold
+            text-white rounded-3xl bg-gradient-to-r from-[#8456EC] to-[#E87BF8]"
+            >
+              {" "}
+              🎉 Create my event
+            </button>
+          </Link>
         </div>
       </div>
     </div>
