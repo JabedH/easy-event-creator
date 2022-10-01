@@ -11,7 +11,7 @@ const Event = () => {
   return (
     <div className="bg-[#FBFAFF] h-full">
       <div className="lg:grid grid-cols-2 items-center  justify-items-center ">
-        <div className="lg:px-[10rem] lg:my-[17rem] py-[5rem]">
+        <div className="lg:px-[10rem] lg:my-[17rem] py-[5rem] z-10">
           <h3 className="lg:text-[4.8rem] text-[2.8rem] font-bold">
             Birthday Bash
           </h3>
@@ -56,7 +56,7 @@ const Event = () => {
             </div>
           </div>
         </div>
-        <img className="" src={bg} alt="" />
+        <img className="z-0" src={bg} alt="" />
       </div>
     </div>
   );

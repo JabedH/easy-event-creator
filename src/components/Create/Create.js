@@ -26,7 +26,7 @@ const Create = () => {
           Create event
         </h4>
       </div>
-      <div className="border-2 rounded-md border-sky-800 flex justify-center">
+      <div className=" lg:border-2 rounded-md border-sky-800 flex justify-center">
         {/* react hook form */}
         <div className="pl-0 md:pl-10 my-10 md:my-10 m-1">
           <form onSubmit={handleSubmit(onSubmit)}>
